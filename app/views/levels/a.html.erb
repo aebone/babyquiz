@@ -1,0 +1,31 @@
+<div id="start">
+  Olá! Meu nome é Joyce, que bom que você está aqui!<br>Vamos ver se você pode me ajudar...<br>
+  <button type="button" onclick="hideDiv('start')">Começar</button>
+</div>
+
+<div id="questions"></div>
+<div id="error"></div>
+<div id="result"></div> 
+
+<script type="text/javascript">
+
+var button = document.querySelector("button");
+button.style.cursor = "pointer";
+button.addEventListener("click", clickHandler, false);
+
+function hideDiv(start)
+{
+  var hideStart = document.getElementById(start);
+  if(hideStart.style.display=="none"){
+    hideStart.style.display="";
+  }else{
+    hideStart.style.display="none";
+  }    
+}
+
+function clickHandler()
+{
+  playGame();
+}
+
+</script>
