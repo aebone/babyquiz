@@ -3,6 +3,9 @@
 /***********************************************/
 /***********************************************/
 
+var scoreA;
+var scoreB;
+var totalScore = scoreA + scoreB;
 
 function playGame()
 {
@@ -77,7 +80,7 @@ function playGame()
    }
  }
 
- var scoreA = score.numCorrectAnswers;
+ scoreA = score.numCorrectAnswers;
 
  el = new Element('h2');
  el.set('html', '<a href="levels/b">Próximo Nível</a>');
@@ -241,7 +244,11 @@ function playGame2()
    }
  }
 
- var scoreB = score.numCorrectAnswers;
+ scoreB = score.numCorrectAnswers;
+
+ el = new Element('h1');
+ el.set('html', + totalScore);
+ document.id('result').adopt(el); 
 
  el = new Element('h2');
  el.set('html', '<a href="/levels/c">Próximo Nível</a>');
@@ -257,7 +264,7 @@ var questions = [
 },
 {
   label: 'Como é chamada a categoria de aliens híbridos que seriam parte humana e parte animal?',
-  options: ['Zoomórfica', 'Zoomórfica', 'Mutante'],
+  options: ['Zoomórfica', 'Zoórfica', 'Mutante'],
   answer: ['Zoomórfica'],
   forceAnswer: true,
 },
