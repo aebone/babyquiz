@@ -3,12 +3,17 @@ class LevelsController < ApplicationController
   end
 
   def b
+    @scorea = params[:scorea]
   end
 
   def c
+    @scoreb = params[:scoreb]
+    @totalscore = params[:totalscore]
   end
 
   def d
+    @scorec = params[:scorec]
+    @totalscore = params[:totalscore]
   end
 
   def e

@@ -1,22 +1,22 @@
 Babyquiz::Application.routes.draw do
   
-  get "levels/b"
+  post "levels/b"
 
-  get "levels/c"
+  post "levels/c"
 
-  get "levels/d"
+  post "levels/d"
 
-  get "levels/e"
+  post "levels/e"
 
-  get "levels/f"
+  post "levels/f"
 
-  get "levels/g"
+  post "levels/g"
 
-  get "levels/h"
+  post "levels/h"
 
-  get "levels/i"
+  post "levels/i"
 
-  get "levels/j"
+  post "levels/j"
 
   root :to => 'levels#a'
 
