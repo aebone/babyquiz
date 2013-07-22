@@ -5,11 +5,6 @@ function nivelB()
   // Zerando o score B
   window.scoreB = 0;
 
-  function showAnswerAlert()
-  {
-    document.id('error').set('html', 'Você precisa escolher uma resposta.');
-  }
-
   function showScore() {
    var score = babyQuiz.getScore();
 
@@ -79,7 +74,7 @@ function nivelB()
  window.totalScore = window.scoreA + window.scoreB;
 
  el = new Element('h1');
- el.set('html', + totalScore);
+ el.set('html', 'Sua pontuação total até aqui é: '  + totalScore);
  document.id('result').adopt(el); 
 
  el = new Element('h2');

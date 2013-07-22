@@ -1,9 +1,14 @@
-//Inicio da Funcao nivelC
-function nivelC()
+//Inicio da Funcao nivelJ
+function nivelJ()
 {
   // FORÇAR A RESPONDER ( forceAnswer: true )
-  // Zerando o score C
-  window.scoreC = 0;
+  // Zerando o score J
+  window.scoreJ = 0;
+
+  function showAnswerAlert()
+  {
+    document.id('error').set('html', 'Você precisa escolher uma resposta.');
+  }
 
   function showScore() {
    var score = babyQuiz.getScore();
@@ -70,16 +75,55 @@ function nivelC()
    }
  }
 
- window.scoreC = score.numCorrectAnswers;
- window.totalScore = window.totalScore + window.scoreC;
+ // mudar em cada nivel
+ window.scoreJ = score.numCorrectAnswers;
+ window.totalScore = window.totalScore + window.scoreJ;
 
  el = new Element('h1');
- el.set('html', 'Sua pontuação total até aqui é: ' + totalScore);
- document.id('result').adopt(el); 
+ el.set('html', 'Sua pontuação final é: ' + totalScore);
+ document.id('result').adopt(el);
 
- //FORM para guardar o score
+// Ifs para o total score
+if(totalScore === 0)
+{
  el = new Element('h2');
- el.set('html', '<form action="/levels/d" method="POST"><input type="hidden" name="totalscore" value=' +  window.totalScore +'><input type="hidden" name="scorec" value=' +  window.scoreC +'><input type="submit" value="Próximo Nível"></form>');
+ el.set('html', 'Ai ai ai, você não me ajudou, errou todas as questões, que tal jogar novamente?');
+ document.id('result').adopt(el);
+}
+if(totalScore === 100)
+{
+ el = new Element('h2');
+ el.set('html', 'Nossa! Você é um gênio, tirou todas as minhas dúvidas. Obrigada!');
+ document.id('result').adopt(el);
+}
+if(totalScore >= 1 && totalScore <= 25)
+{
+ el = new Element('h2');
+ el.set('html', 'Tenho certeza que você pode me ajudar mais, que tal jogar novamente?');
+ document.id('result').adopt(el);
+}
+if(totalScore >= 26 && totalScore <= 50)
+{
+ el = new Element('h2');
+ el.set('html', 'Você me ajudou em algumas questões, mas acho que pode melhorar, vamos jogar novamente?');
+ document.id('result').adopt(el);
+}
+if(totalScore >= 51 && totalScore <= 75)
+{
+ el = new Element('h2');
+ el.set('html', 'Você me ajudou em várias questões! Eu agradeço sua gentiliza, mas que tal jogar de novo para ver se você se sai melhor?');
+ document.id('result').adopt(el);
+}
+if(totalScore >= 76 && totalScore <= 99)
+{
+ el = new Element('h2');
+ el.set('html', 'Você tirou quase todas as minhas dúvidas! Muito bem! Não quer tentar acertar todas? É só jogar novamente.');
+ document.id('result').adopt(el);
+}
+
+ //jogar de novo
+ el = new Element('h2');
+ el.set('html', '<a href="/">Jogar novamente</a>');
  document.id('result').adopt(el);
 }
 

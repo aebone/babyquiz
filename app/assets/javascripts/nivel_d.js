@@ -5,11 +5,6 @@ function nivelD()
   // Zerando o score C
   window.scoreD = 0;
 
-  function showAnswerAlert()
-  {
-    document.id('error').set('html', 'Você precisa escolher uma resposta.');
-  }
-
   function showScore() {
    var score = babyQuiz.getScore();
 
@@ -79,7 +74,7 @@ function nivelD()
  window.totalScore = window.totalScore + window.scoreD;
 
  el = new Element('h1');
- el.set('html', + totalScore);
+ el.set('html', 'Sua pontuação total até aqui é: ' + totalScore);
  document.id('result').adopt(el); 
 
  //FORM para guardar o score

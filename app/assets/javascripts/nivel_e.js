@@ -1,19 +1,15 @@
-/***********************************************/
-/******** MEU BABY QUER QUIZ (BAD) CODE ********/
-/***********************************************/
-/***********************************************/
-
-function nivelA()
+//Inicio da Funcao nivelE
+function nivelE()
 {
   // FORÇAR A RESPONDER ( forceAnswer: true )
-  // Zerando o scoreA
-  window.scoreA = 0;
+  // Zerando o score C
+  window.scoreE = 0;
 
   function showScore() {
    var score = babyQuiz.getScore();
 
    var el = new Element('h2');
-   el.set('html','Você fez ' + score.numCorrectAnswers + " pontos.");
+   el.set('html', 'Você fez '+ score.numCorrectAnswers + " pontos.");
    document.id('result').adopt(el);
 
    if(score.numCorrectAnswers === 10)
@@ -74,73 +70,79 @@ function nivelA()
    }
  }
 
- window.scoreA = score.numCorrectAnswers;
+ // mudar em cada nivel
+ window.scoreE = score.numCorrectAnswers;
+ window.totalScore = window.totalScore + window.scoreE;
 
- el = new Element('h2');
+ el = new Element('h1');
+ el.set('html', 'Sua pontuação total até aqui é: ' + totalScore);
+ document.id('result').adopt(el); 
+
  //FORM para guardar o score
- el.set('html', '<form action="levels/b" method="POST"><input type="hidden" name="scorea" value=' +  window.scoreA +'><input type="submit" value="Próximo Nível"></form>');
+ el = new Element('h2');
+ el.set('html', '<form action="/levels/f" method="POST"><input type="hidden" name="totalscore" value=' +  window.totalScore +'><input type="hidden" name="scored" value=' +  window.scoreE +'><input type="submit" value="Próximo Nível"></form>');
  document.id('result').adopt(el);
 }
 
 var questions = [
 {
-  label: 'Qual a capital da Noruega?',
-  options: ['Estocolmo', 'Oslo', 'Copenhagen'],
-  answer: ['Oslo'],
+  label: 'Em março de 1997, milhares de pessoas relataram ter visto um estranho objeto no céu do Arizona. Que forma tinha ele?',
+  options: ['Forma de "V"', 'Forma de Disco', 'Forma humana'],
+  answer: ['Forma de "V"'],
   forceAnswer: true,
 },
 {
-  label: 'Quem ganhou a Copa do Mundo de futebol na África do Sul?',
-  options: ['Brasil', 'Holanda', 'Espanha'],
-  answer: ['Espanha'],
+  label: 'Como é chamada a categoria de aliens híbridos que seriam parte humana e parte animal?',
+  options: ['Zoomórfica', 'Zoórfica', 'Mutante'],
+  answer: ['Zoomórfica'],
   forceAnswer: true,
 },
 {
-  label: 'Se estou tendo enjôos matinais, estou grávida?',
-  options: ['Não', 'Sim', 'Depende. O enjoo matinal, muitas vezes acompanhado de vômito, pode surgir antes mesmo do sintoma principal, que é o atraso menstrual. Costuma ser o aviso mais comum da presença de gravidez.'],
-  answer: ['Depende. O enjoo matinal, muitas vezes acompanhado de vômito, pode surgir antes mesmo do sintoma principal, que é o atraso menstrual. Costuma ser o aviso mais comum da presença de gravidez.'],
+  label: 'No judô existem vários nomes para as pontuações. Quais das alternativas abaixo não corresponde a nenhuma pontuação?',
+  options: ['Wasabi', 'Koka', 'Ippon.'],
+  answer: ['Wasabi'],
   forceAnswer: true,
 },
 {
-  label : 'Quantos estados tem os Estados Unidos?',
-  options : ['49','50','51'],
-  answer : ['50'],
+  label : 'Qual homem caiu da cadeira e quebrou o pescoço após receber uma notícia?',
+  options : ['Elias','Acã','Eli'],
+  answer : ['Eli'],
   forceAnswer : true
 },
 {
-  label : 'O crocodilo é um...',
-  options : ['anfibio','reptil', 'verme'],
-  answer : ['reptil'],
+  label : 'Correu um boato de que Nick Jonas estava namorando uma atriz da Disney. Que atriz era essa?',
+  options : ['Ashley Tisdale','Miley Cyrus', 'Selena Gomes'],
+  answer : ['Miley Cyrus'],
   forceAnswer : true
 },
 {
-  label: 'Em que ano aconteceu as Olimpíadas de Atlanta?',
-  options : ['1992','1996','2000'],
-  answer :['1996'],
+  label: 'Qual é o nome do livro em que Fiuk lançou?',
+  options : ['Fiuk in história','Fiuk e sua vida','Fiuk my life'],
+  answer :['Fiuk my life'],
   forceAnswer : true
 },
 {
-  label: 'O que posso fazer para reduzir os enjoos?',
-  options : ['Coma pouco e se exercite bastante','Evite comidas condimentadas e grandes refeições','Opte por alimentos mais úmidos'],
-  answer :['Evite comidas condimentadas e grandes refeições'],
+  label: 'Em que ano aconteceu a primeira temporada de F1?',
+  options : ['1965','1970','1960'],
+  answer :['1960'],
   forceAnswer : true
 },
 {
-  label: 'Estou no início da gestação e tive um pequeno sangramento seguido de cólica. Isso é normal?',
-  options : ['É normal','Depende. Pequenos sangramentos no início da gravidez podem ser fisiológicos ou não.','Não é normal'],
-  answer :['Depende. Pequenos sangramentos no início da gravidez podem ser fisiológicos ou não.'],
+  label: 'Quem vai pra cadeia por causa da usurpação?',
+  options : ['Paola Bracho','Carlos Daniel','Paulina Martins'],
+  answer :['Paulina Martins'],
   forceAnswer : true
 },
 {
-  label: 'Quantos anos tem Silvio Santos?',
-  options : ['70','82','Nunca saberemos a verdade'],
-  answer :['Nunca saberemos a verdade'],
+  label: '"O Amor e o Poder" da cantora Rosana foi um grande sucesso em 1987 / 1988. E foi tema de Jocasta ( Vera Fischer ) na novela?',
+  options : ['O Profeta','Mandala','Laços de Familia'],
+  answer :['Mandala'],
   forceAnswer : true
 },
 {
-  label: 'Qual a população de Rondônia?',
-  options : ['1,561 milhões','2,368 milhões','1000'],
-  answer :['1,561 milhões'],
+  label: 'Atuais dados de países europeus (2013), o desemprego na Europa atinge 23 milhões de pessoas. A maior parte (16 milhões) está nos 17 países que compõem a zona do euro. De acordo com esses dados, qual é o país com maior porcentagem de desemprego, e qual é esta porcentagem?',
+  options : ['Portugal, e o desemprego está em 19,2%','Espanha, e o desemprego está em 22,8%','Grécia, e o desemprego está em 17,7%'],
+  answer :['Espanha, e o desemprego está em 22,8%'],
   forceAnswer : true
 }
 ]
@@ -163,4 +165,3 @@ var babyQuiz = new DG.babyQuiz({
 });
 babyQuiz.start();
 }
-//Fim da Funcao nivelA
