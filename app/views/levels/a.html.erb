@@ -1,18 +1,54 @@
 <div id="start">
-  Olá! Meu nome é Joyce, que bom que você está aqui!<br>Vamos ver se você pode me ajudar...<br>
-  <button type="button" onclick="hideDiv('start')">Começar</button>
+  Bem vindos ao quiz do Meu Baby Quer<br>
+  <button class="md-trigger" data-modal="modal-4" onclick="hideDiv('start')">Começar</button>
+</div>
+
+<div class="md-modal md-effect-4" id="modal-4">
+  <div class="md-content">
+    <div id="start">
+      <h3>Olá,</h3>
+      <div>
+        <p>Meu nome é Joyce, que bom que você está aqui!<br>Vamos ver se você pode me ajudar...</p>
+        <button class="md-close" onclick="clickHandler()">Iniciar perguntas</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="questions"></div>
-<div id="error"></div>
-<div id="result"></div> 
+
+<div class="md-modal md-effect-4" id="modal-4">
+  <div class="md-content">
+    <div id="error"></div>
+    <div id="result"></div> 
+  </div>
+</div>
+
+
+
+<!-- PERTENÇO AO MODAL WINDOW -->
+
+<!-- the overlay element -->
+<div class="md-overlay"></div>
+<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+<script src="js/classie.js"></script>
+<!-- for the blur effect -->
+<script src="js/modalEffects.js"></script>
+<!-- this is important for IEs -->
+<script>
+var polyfilter_scriptpath = '/js/';
+</script>
+<script src="js/cssParser.js"></script>
+<script src="js/css-filters-polyfill.js"></script>
+
+
+<!-- PERTENÇO A AYA  -->
 
 <script type="text/javascript">
-
-var button = document.querySelector("button");
-button.style.cursor = "pointer";
-button.addEventListener("click", clickHandler, false);
-
+// DESATIVEI POIS ESTOU CHAMANDO A FUNÇÃO CLICKHANDLER NA CAIXA DO MODAL
+// var button = document.querySelector("button");
+// button.style.cursor = "pointer";
+// button.addEventListener("click", clickHandler, false);
 function hideDiv(start)
 {
   var hideStart = document.getElementById(start);
@@ -22,7 +58,6 @@ function hideDiv(start)
     hideStart.style.display="none";
   }    
 }
-
 function clickHandler()
 {
   nivelA();
