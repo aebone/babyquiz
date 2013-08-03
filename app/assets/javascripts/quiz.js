@@ -98,6 +98,7 @@ DG.babyQuiz = new Class( {
 		el.addClass('dg-answer-button-container');
 
 		var button = new Element('input');
+		button.addClass('btn btn-large btn-danger');
 		button.type = 'button';
 		button.set('value', this.internal.labelAnswerButton);
 		button.addEvent('click', this._sendAnswer.bind(this));

@@ -1,54 +1,54 @@
 <div id="start">
-  Bem vindos ao quiz do Meu Baby Quer<br>
-  <button class="md-trigger" data-modal="modal-4" onclick="hideDiv('start')">Começar</button>
+  <!-- Button trigger modal -->
+  <h1>Bem vindos ao quiz do MeuBabyQuer</h1>
+  <a data-toggle="modal" class="btn btn-large btn-danger" href="#myModal" onclick="hideDiv('start')">Começar</a>
 </div>
 
-<div class="md-modal md-effect-4" id="modal-4">
-  <div class="md-content">
-    <div id="start">
-      <h3>Olá,</h3>
-      <div>
-        <p>Meu nome é Joyce, que bom que você está aqui!<br>Vamos ver se você pode me ajudar...</p>
-        <button class="md-close" onclick="clickHandler()">Iniciar perguntas</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title">Olá</h1>
       </div>
-    </div>
-  </div>
-</div>
+      <div class="modal-body">
+        <h3>Meu nome é Joyce, que bom que você está aqui!<br>Vamos ver se você pode me ajudar...<br></h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-large btn-danger" onclick="clickHandler()" data-dismiss="modal" aria-hidden="true">Iniciar perguntas!</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- <div id="start">
+  Olá! Meu nome é Joyce, que bom que você está aqui!<br>Vamos ver se você pode me ajudar...<br>
+  <button type="button" onclick="hideDiv('start')">Começar</button>
+</div> -->
 
 <div id="questions"></div>
+<div id="error"></div>
+<div id="result"></div>
 
-<div class="md-modal md-effect-4" id="modal-4">
-  <div class="md-content">
-    <div id="error"></div>
-    <div id="result"></div> 
-  </div>
-</div>
-
-
-
-<!-- PERTENÇO AO MODAL WINDOW -->
-
-<!-- the overlay element -->
-<div class="md-overlay"></div>
-<!-- classie.js by @desandro: https://github.com/desandro/classie -->
-<script src="js/classie.js"></script>
-<!-- for the blur effect -->
-<script src="js/modalEffects.js"></script>
-<!-- this is important for IEs -->
-<script>
-var polyfilter_scriptpath = '/js/';
-</script>
-<script src="js/cssParser.js"></script>
-<script src="js/css-filters-polyfill.js"></script>
+<!-- Modal 2-->
+<div class="modal fade" id="myModal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div id="resultMommy"></div>  
+      </div>  
+    </div>  
+  </div>  
+</div>  
 
 
 <!-- PERTENÇO A AYA  -->
 
 <script type="text/javascript">
-// DESATIVEI POIS ESTOU CHAMANDO A FUNÇÃO CLICKHANDLER NA CAIXA DO MODAL
-// var button = document.querySelector("button");
-// button.style.cursor = "pointer";
-// button.addEventListener("click", clickHandler, false);
+var button = document.querySelector("button");
+button.style.cursor = "pointer";
+button.addEventListener("click", clickHandler, false);
+
 function hideDiv(start)
 {
   var hideStart = document.getElementById(start);
@@ -58,6 +58,7 @@ function hideDiv(start)
     hideStart.style.display="none";
   }    
 }
+
 function clickHandler()
 {
   nivelA();

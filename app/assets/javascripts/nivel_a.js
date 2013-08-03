@@ -1,4 +1,5 @@
 /***********************************************/
+/***********************************************/
 /******** MEU BABY QUER QUIZ (BAD) CODE ********/
 /***********************************************/
 /***********************************************/
@@ -20,35 +21,35 @@ function nivelA()
    {
     el = new Element('h3');
     el.set('html', 'Uau! Você foi muito bem, nos vemos no próximo nível.');
-    document.id('result').adopt(el);
+    document.id('resultMommy').adopt(el);
   }
 
   if(score.numCorrectAnswers === 0)
   {
     el = new Element('h3');
     el.set('html', 'Que pena, você não foi bem, vamos ver se você se recupera no próximo nível.');
-    document.id('result').adopt(el);
+    document.id('resultMommy').adopt(el);
   }
 
   if(score.numCorrectAnswers >= 1 && score.numCorrectAnswers <= 3)
   {
     el = new Element('h3');
     el.set('html', 'Hm, você poderia ter se saído melhor, mas acredito que você possa se recuperar no próximo nível.');
-    document.id('result').adopt(el);
+    document.id('resultMommy').adopt(el);
   }
 
   if(score.numCorrectAnswers >= 4 && score.numCorrectAnswers <= 6)
   {
     el = new Element('h3');
     el.set('html', 'Obrigada. Você me ajudou em algumas questões, vamos para o próximo nível?');
-    document.id('result').adopt(el);
+    document.id('resultMommy').adopt(el);
   }
 
   if(score.numCorrectAnswers >= 7 && score.numCorrectAnswers <= 9)
   {
     el = new Element('h3');
     el.set('html', 'Muito obrigada! Você me ajudou bastante, vamos para o próximo nível?');
-    document.id('result').adopt(el);
+    document.id('resultMommy').adopt(el);
   }
 
   if(score.incorrectAnswers.length > 0)
@@ -74,12 +75,17 @@ function nivelA()
    }
  }
 
+ // ADICIONA O BOTÃO CONTINUAR, QUE APARECE APÓS O RESULTADO, PARA ATIVAR A MENSAGEM DA JOYCE
+ el = new Element('a');
+ el.set('html', '<br><a data-toggle="modal" class="btn btn-large btn-danger" href="#myModal2">Continuar</a>');
+ document.id('result').adopt(el);
+
  window.scoreA = score.numCorrectAnswers;
 
  el = new Element('h2');
  //FORM para guardar o score
- el.set('html', '<form action="levels/b" method="POST"><input type="hidden" name="scorea" value=' +  window.scoreA +'><input type="submit" value="Próximo Nível"></form>');
- document.id('result').adopt(el);
+ el.set('html', '<form action="levels/b" method="POST"><input type="hidden" name="scorea" value=' +  window.scoreA +'><input type="submit" class="btn btn-large btn-danger" value="Próximo Nível"></form>');
+ document.id('resultMommy').adopt(el);
 }
 
 var questions = [

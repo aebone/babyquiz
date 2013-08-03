@@ -1,4 +1,8 @@
 class LevelsController < ApplicationController
+
+  def start
+  end
+
   def a
   end
 
