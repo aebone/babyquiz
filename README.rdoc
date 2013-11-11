@@ -1,1 +1,3 @@
-Projeto em desenvolvimento, está sendo criado com Javascript e Ruby. Quiz sobre gravidez que visa ajudar as atuais e futuras mães entender melhor algumas questões sobre gravidez e crianças de forma leve e menos formal.
+Projeto em desenvolvimento, está sendo criado com Javascript e Ruby.
+Quiz sobre gravidez que visa ajudar as atuais e futuras mães entender melhor algumas questões sobre gravidez e recém nascidos de forma leve e menos formal.
+Possui níveis e pontuação.
